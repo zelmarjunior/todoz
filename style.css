@@ -126,7 +126,7 @@ input:checked {
     }
 
     .display-tasks {
-        width: 90%;
+        width: 85%;
         /* height: 60vh; */
         opacity: 1;
     }
