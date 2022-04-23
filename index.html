@@ -17,17 +17,19 @@
   <!-- <h1 style="text-align: center; margin:  20px;">TO DO LIST DO Z</h1> -->
   <section class="container-register-task">
     <div class="input-group mb-3 input-register-task">
-      <input type="text" class="form-control input-task" placeholder="" aria-label="" aria-describedby="basic-addon1">
+      <input type="text" class="form-control input-task" placeholder="Tarefa" aria-label=""
+        aria-describedby="basic-addon1">
+      <!-- <button onclick="createTask()" class="btn btn-outline-secondary btn-add-task">ADD</button> -->
+      <img src="./img/plus.png" alt="Adiciona Tarefa" onclick="createTask()" class="btn-add-task">
       <div class="input-group-prepend">
       </div>
-      
+
     </div>
   </section>
   <div class="container-display-tasks">
-    <ul id="display-tasks" class="display-tasks">
+    <div id="display-tasks" class="display-tasks">
       <!-- Dados do Local Storage -->
-    </ul>
-    <button onclick="createTask()" class="btn btn-outline-secondary btn-add-task">ADD</button>
+    </div>
   </div>
 </body>
 

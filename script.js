@@ -20,7 +20,7 @@ createTask = (description, status) => {
         <p class="card-description">${dataInputDescription}</p>
         <img class="card-icon-delete" src="./img/trash.png" alt="Icon Delete (Trash)" data-index=${index}>
       </div>`;
-
+    document.querySelector(".display-tasks").style.display = "block"
     document.querySelector(".display-tasks").appendChild(createdTask);
 
 
@@ -30,13 +30,12 @@ createTask = (description, status) => {
       index: dataIndex
     });
     console.log(banco);
+    console.log(createdTask);
 
     document.querySelector(".input-task").value = ""
   } else {
     alert('Digite alguma tarefa para cadastrar!')
   }
-
-
 }
 
 updateDisplayTasks = () => {
@@ -63,17 +62,22 @@ clickTask = (evento) => {
   }
   else if (elemento.className === "card-icon-delete") {
     console.log("Deleta task");
-    banco.splice(elemento.dataset.index, 1)
-    elemento.parentNode.parentNode.remove()
+    banco.splice(elemento.dataset.index, 1);
+    elemento.parentNode.parentNode.remove();
+    index = 0;
+    for (const task of banco) {
+      banco[index].index = index;
+      document.getElementsByClassName('card-icon-delete')[index].dataset.index = index;
+      console.log(index)
+      index = index + 1;
+    }
+
+    if (banco.length == '0') {
+      document.querySelector('.display-tasks').style.display = 'none';
+    }
     console.log(banco)
-
-    /* banco.splice(index, 1); */
-
-    /* let indexTask = elemento.dataset.index; */
     console.log(elemento);
-    /* let index = elemento.dataset.index;
-    console.log(index) */
-    /* deleteTask(index) */
+
   }
 }
 
